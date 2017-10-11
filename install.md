@@ -47,5 +47,8 @@ This will copy all required headers into the local includes directory (e.g. `/us
 This last stage enables the library developer to link easily its library against all `CepGen` requirements:
 
 - `libCepGenCore.so` contains all "non-physics" standard objects implementation,
-- `libCepGenProcesses.so` contains all processes definitions and implementations
+- `libCepGenProcesses.so` contains all processes definitions and implementations,
+- `libCepGenStructureFunctions.so` embeds all proton structure functions calculators objects,
+- `libCepGenPhysics.so` contains all physics constants, calculators, and helpers,
+- `libCepGenEvent.so` holds the definition of events and subleading particles objects (useful for analyses of CepGen outputs).
 
