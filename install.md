@@ -18,6 +18,15 @@ The events generation and storage for further processing can however be simplifi
 - `LHAPDF` version 5 or above, for the "exotic" structure functions definition,
 - `Pythia` version 8 or above, for the $$W^{\pm}$$ decay and excited proton fragmentation.
 
+### Distribution-specific dependencies
+
+- Ubuntu
+    - `sudo apt-get install gfortran`
+    - `sudo apt-get install libgsl2 libgsl-dev`
+
+- Fedora
+    - `dnf install gsl gsl-devel`
+
 ## Installation recipe
 
 Start by downloading the latest release on our github project page.
