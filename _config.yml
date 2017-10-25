@@ -4,3 +4,4 @@ theme: jekyll-theme-leap-day
 description: A central exclusive events generator for high-energy physics
 plugins:
   - jemoji
+repository: cepgen/cepgen
