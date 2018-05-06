@@ -11,7 +11,7 @@ Two types of steering card are currently supported in `CepGen` for the parameter
 The first, structured, configuration allows a better control over all run parameters through an increased granularity.
 It also allows to include "standard" configuration parameters through `@include` statements.
 
-This configuration style requires the `libconfig` C++ bindings.
+This configuration style requires the `python` C wrapper to be linked to the main library.
 
 One object is required to be defined within every steering card: the `process` path.
 
@@ -19,25 +19,25 @@ One object is required to be defined within every steering card: the `process` p
 
 #### General parameters
 
-The `name` string attribute is required to specify the process to generate.
+The first `cepgen.Module` attribute attribute is required to specify the process to generate.
 See [the list of processes](proclist) to get all supported values.
 
-The `mode` string attribute allows to specify the kinematic regime to generate and the size of the phase space to perform the integration.
+The `mode` enumeration allows to specify the kinematic regime to generate and the size of the phase space to perform the integration.
 It can take the following values:
 
-- `elastic/elastic`, for the elastic emission of photons from the incoming protons (default value if unspecified),
-- `elastic/inelastic` or `inelastic/elastic`, for the elastic scattering of one photon and an inelastic/semi-exclusive emission of the other photon, resulting in the excitation/fragmentation of the outgoing proton state,
-- `inelastic/inelastic`, where both the protons are fragmented in the final state.
+- `ProcessMode.ElasticElastic = 1`, for the elastic emission of photons from the incoming protons (default value if unspecified),
+- `ProcessMode.ElasticInelastic = 2` or `ProcessMode.InelasticElastic = 3`, for the elastic scattering of one photon and an inelastic/semi-exclusive emission of the other photon, resulting in the excitation/fragmentation of the outgoing proton state,
+- `ProcessMode.InelasticInelastic = 4`, where both the protons are fragmented in the final state.
 
-#### `process.in_kinematics` block
+#### `process.inKinematics` block
 
-The `beam1_pz` and `beam2_pz` floating point numbers allow to specify the two incoming protons' longitudinal momentum (in GeV).
+The `pz` Python pair of floating point numbers, allowing to specify the two incoming protons' longitudinal momentum (in GeV).
 
-The `structure_functions` string/integer attribute specifies the $$F_2(x,Q^2)$$ structure function to use in the parameterisation of the incoming photon fluxes.
+The `structureFunctions` enumeration attribute specifies the $F _ {2/L}(x,Q^2)$ structure function to use in the parameterisation of the incoming photon fluxes.
 The string attribute is the prefered, while the integer-type is kept for backward-compatibility with old `LPAIR` steering cards.
 See [the list of structure functions](str-functions) to obtain all supported values.
 
-#### `process.out_kinematics` block
+#### `process.outKinematics` block
 
 The `pair` integer value, only used in the lepton pair production, allows the end-user to specify the PDG identifier of the lepton to be produced in the final state.
 It can hence take the following values:
@@ -47,37 +47,47 @@ It can hence take the following values:
 
 The kinematics phase space to be used in the integration and events production can be specified using a set of cuts applied on the matrix element level:
 
-- `min_pt` and `max_pt`, for the single central particle transverse momentum range definition,
-- `min_energy` and `max_energy`, for the single central particle energy range definition,
-- `min_eta` and `max_eta`, for the single central particle pseudo-rapidity range definition,
-- `min_rapidity` and `max_rapidity`, for the single central particle rapidity range definition,
-- `min_mx` and `max_mx`, for the outgoing excited proton mass range definition
+- `pt`, for the single central particle transverse momentum range definition,
+- `energy`, for the single central particle energy range definition,
+- `eta`, for the single central particle pseudo-rapidity range definition,
+- `rapidity`, for the single central particle rapidity range definition,
+- `mx`, for the outgoing excited proton mass range definition
 
 ### Example
 
-It can be configured with:
+The generation of 100k single-dissociative $\gamma\gamma\to\mu^+\mu^-$ events at 13 TeV with the LPAIR matrix element implementation with the following phase space cuts:
 
-```cfg
-process = {
-  name = "lpair";
-  mode = "elastic/elastic";
-  /* or "inelastic/elastic"
-        "elastic/inelastic"
-        "inelastic/inelastic"*/
-  in_kinematics = {
-    beam1_pz = 6500.;
-    beam2_pz = 6500.;
-    structure_functions = "Suri-Yennie";
-  };
-  out_kinematics = {
-    pair = 13;
-    min_pt = 25.0;
-    min_energy = 0.0;
-    min_eta = -2.5;
-    max_eta = 2.5;
-    max_mx = 1000.;
-  };
-};
+- $p _ \mathrm{T}(\mu^\pm)>$ 25 GeV, $\lvert\eta(\mu^\pm)\rvert < $ 2.5
+- 1.07 $< M_X < $ 1000 GeV
+
+can be steered using the following card:
+
+```python
+import Config.Core as cepgen
+from Config.integrators_cff import vegas as integrator
+from Config.generator_cff import generator as gentmpl
+
+process = cepgen.Module('lpair',
+    mode = cepgen.ProcessMode.InelasticElastic,
+    ''' or cepgen.ProcessMode.ElasticElastic
+           cepgen.ProcessMode.ElasticInelastic
+           cepgen.ProcessMode.InelasticInelastic '''
+    inKinematics = cepgen.Parameters(
+        pz = (6500., 6500.), # or cmEnergy = 13.e3,
+        structureFunctions = cepgen.StructureFunctions.SuriYennie,
+    ),
+    outKinematics = cepgen.Parameters(
+        pair = 13,
+        pt = (25., ),
+        energy = (0., ),
+        eta = (-2.5, 2.5),
+        mx = (1.07, 1000.),
+    )
+)
+
+generator = gentmpl.clone(
+    numEvents = 1e5,
+)
 ```
 ## LPAIR-like steering cards
 

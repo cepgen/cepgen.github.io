@@ -13,10 +13,10 @@ Among the mandatory dependencies,
 - [`GSL`](bibliography#computational-methods), for the Vegas integrator and events generation.
 
 The events generation and storage for further processing can however be simplified by using the following additional (and facultative) dependencies:
-- `libconfig`, for the input cards parsing,
-- `HepMC` version 2 or 3, for the output generation,
-- `LHAPDF` version 5 or above, for the "exotic" structure functions definition,
-- `Pythia` version 8 or above, for the $$W^{\pm}$$ decay and excited proton fragmentation.
+- `python` version 2 or 3, with its development headers, for the advanced [input cards](steering-card) parsing,
+- [`HepMC`](https://hepmc.web.cern.ch/hepmc/) version 2 or 3, for the output generation,
+- [`LHAPDF`](https://lhapdf.hepforge.org/) version 5 or above, for the "exotic" structure functions definition,
+- [`Pythia`](http://home.thep.lu.se/Pythia/) version 8 or above, for the various particles decays and excited proton fragmentation.
 
 ### Distribution-specific dependencies
 
@@ -56,8 +56,8 @@ This will copy all required headers into the local includes directory (e.g. `/us
 This last stage enables the library developer to link easily its library against all `CepGen` requirements:
 
 - `libCepGenCore.so` contains all "non-physics" standard objects implementation,
-- `libCepGenProcesses.so` contains all processes definitions and implementations,
-- `libCepGenStructureFunctions.so` embeds all proton structure functions calculators objects,
+- `libCepGenProcesses.so` contains [all processes definitions](proclist) and implementations,
+- `libCepGenStructureFunctions.so` embeds all proton [structure functions](str-functions) calculators objects,
 - `libCepGenPhysics.so` contains all physics constants, calculators, and helpers,
 - `libCepGenEvent.so` holds the definition of events and subleading particles objects (useful for analyses of CepGen outputs).
 

@@ -6,17 +6,17 @@ title: Proton structure functions
 
 ## Compact list of parameterisations
 
-| Name                   | Code | Description           | $F_2$ | $F_L$ |
-|------------------------|:----:|-----------------------|:-----:|:-----:|
-| `Suri-Yennie`          | 11   |                       | -     | -     |
-| `Szczurek-Uleshchenko` | 12   |                       | :ballot_box_with_check:  | -     |
-| `BDH`                  | 13   | Block-Durand-Ha       | :ballot_box_with_check:  | -     |
-| `Fiore-Brasse`         | 101  | Fiore & Brasse        | :ballot_box_with_check:  | -     |
-| `Christy-Bosted`       | 102  | Christy & Bosted      | :ballot_box_with_check:  | :ballot_box_with_check:  |
-| `ALLM;91`              | 201  | ALLM 1991             | :ballot_box_with_check:  | :eight_pointed_black_star:  |
-| `ALLM;97`              | 202  | ALLM 1997             | :ballot_box_with_check:  | :eight_pointed_black_star:  |
-| `GD07p`                | 203  | GD07p (HERMES refit)  | :ballot_box_with_check:  | :eight_pointed_black_star:  |
-| `GD11p`                | 204  | GD11p (HERMES refit)  | :ballot_box_with_check:  | :eight_pointed_black_star:  |
+| Name                               | Code | Description           | $F_2$ | $F_L$ |
+|------------------------------------|:----:|-----------------------|:-----:|:-----:|
+| [`SuriYennie`](#suri-yennie)       | 11   |                       | -     | -     |
+| `SzczurekUleshchenko`              | 12   |                       | :ballot_box_with_check:  | -     |
+| `BDH`                              | 13   | Block-Durand-Ha       | :ballot_box_with_check:  | -     |
+| [`FioreBrasse`](#fiore-brasse)     | 101  | Fiore & Brasse        | :ballot_box_with_check:  | -     |
+| [`ChristyBosted`](#christy-bosted) | 102  | Christy & Bosted      | :ballot_box_with_check:  | :ballot_box_with_check:  |
+| [`ALLM91`](#abramowicz-et-al)      | 201  | ALLM 1991             | :ballot_box_with_check:  | :eight_pointed_black_star:  |
+| [`ALLM97`](#abramowicz-et-al)      | 202  | ALLM 1997             | :ballot_box_with_check:  | :eight_pointed_black_star:  |
+| [`GD07p`](#abramowicz-et-al)       | 203  | GD07p (HERMES refit)  | :ballot_box_with_check:  | :eight_pointed_black_star:  |
+| [`GD11p`](#abramowicz-et-al)       | 204  | GD11p (HERMES refit)  | :ballot_box_with_check:  | :eight_pointed_black_star:  |
 
 ## Suri-Yennie
 
