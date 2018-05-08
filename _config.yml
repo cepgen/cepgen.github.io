@@ -5,3 +5,4 @@ description: A central exclusive events generator for high-energy physics
 plugins:
   - jemoji
 repository: cepgen/cepgen
+
