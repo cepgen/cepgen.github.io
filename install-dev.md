@@ -6,7 +6,7 @@ title: Developers installation
 
 Active development branches:
 
-- `collinear-partons`: for the collinear emission of a valence quark from which the two-photon system arises in Pythia 8
+- `devel`: for the main branch where most of the new code is being pushed. The Pythia 8 hadronisation part handles by default the collinear emission of a valence quark from which the two-photon system arises ;
 - `pA-to-ff`: for the version allowing FORTRAN implementations of $k _ \mathrm{T}$ processes, including the $pA\to X(g\gamma\to c\bar c)A$ or $pA\to p^{(\ast)}(\gamma\gamma\to\ell^+\ell^-)A$ processes.
 
 Current contributors: {% for contrib in site.github.contributors %}
