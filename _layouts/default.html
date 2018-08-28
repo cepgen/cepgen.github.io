@@ -12,16 +12,24 @@
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
-        }
+          processEscapes: true,
+        },
+        TeX: {
+          Macros: {
+            Pom: "{I\\!P}",
+            Reg: "{I\\!R}",
+            xbj: "{x_{\\rm Bj}}",
+          }
+        },
       });
     </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <!--<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=default" type="text/javascript"></script>-->
+    <!--<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>-->
   </head>
   <body>
 
