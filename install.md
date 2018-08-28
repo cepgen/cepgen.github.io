@@ -35,12 +35,11 @@ This will copy all required headers into the local includes directory (e.g. `/us
 
 This last stage enables the library developer to link easily its library against all `CepGen` requirements:
 
-- `libCepGenCore.so` contains all "non-physics" standard objects implementation,
-- `libCepGenProcesses.so` contains [all processes definitions](proclist) and implementations,
-- `libCepGenStructureFunctions.so` embeds all proton [structure functions](str-functions) calculators objects,
-- `libCepGenPhysics.so` contains all physics constants, calculators, and helpers,
-- `libCepGenEvent.so` holds the definition of events and subleading particles objects (useful for analyses of CepGen outputs).
-
+- `libCepGenCore` contains all physics constants, calculators, and helpers, along with "non-physics" standard objects implementation,
+- `libCepGenProcesses` contains [all processes definitions](proclist) and implementations,
+- `libCepGenStructureFunctions` embeds all proton [structure functions](str-functions) calculators objects,
+- `libCepGenEvent` holds the definition of events and subleading particles objects (useful for analyses of CepGen outputs),
+- `libCepGenIO` provides a set of helper tools for the interfacing with external applications.
 
 ## Dependencies
 
@@ -49,7 +48,7 @@ For successful build and operations, `CepGen` only requires a limited set of ext
 Among the mandatory dependencies,
 - `CMake`, for the project building,
 - [`GSL`](bibliography#computational-methods), for the Vegas integrator and events generation.
-  A version greater than or equal to `2.1` is recommended for the bilinear spline interpolation capability used in e.g. the MSTW structure functions grid evaluation.
+  A version greater than or equal to `2.1` is recommended for the bilinear spline interpolation capability used in e.g. the MSTW structure functions, or KMR gluon flux grid evaluation.
 
 A set of facultative libraries can also be linked against `CepGen` for enhanced capabilities:
 - `python` version 2 or 3, with its development headers, for the advanced [input cards](steering-card) parsing,
@@ -67,4 +66,5 @@ The events generation and storage for further processing can be fed to several (
     - `sudo apt-get install libgsl2 libgsl-dev`
 
 - Fedora
+    - `dnf install gcc-gfortran`
     - `dnf install gsl gsl-devel`

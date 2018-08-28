@@ -2,9 +2,8 @@
 title: Process parameterisation
 ---
 
-# CepGen configuration
-
-Two types of steering card are currently supported in `CepGen` for the parameterisation of its run.
+`CepGen` may either be steered through the modification of its internal parameters definition, or using the various steering modules available.
+For the latter, two types of cards are currently supported for the run parameterisation.
 
 ## Structured configurations
 
@@ -22,12 +21,7 @@ One object is required to be defined within every steering card: the `process` p
 The first `cepgen.Module` attribute attribute is required to specify the process to generate.
 See [the list of processes](proclist) to get all supported values.
 
-The `mode` enumeration allows to specify the kinematic regime to generate and the size of the phase space to perform the integration.
-It can take the following values:
 
-- `ProcessMode.ElasticElastic = 1`, for the elastic emission of photons from the incoming protons (default value if unspecified),
-- `ProcessMode.ElasticInelastic = 2` or `ProcessMode.InelasticElastic = 3`, for the elastic scattering of one photon and an inelastic/semi-exclusive emission of the other photon, resulting in the excitation/fragmentation of the outgoing proton state,
-- `ProcessMode.InelasticInelastic = 4`, where both the protons are fragmented in the final state.
 
 #### `process.inKinematics` block
 
@@ -68,16 +62,18 @@ from Config.integrators_cff import vegas as integrator
 from Config.generator_cff import generator as gentmpl
 
 process = cepgen.Module('lpair',
-    mode = cepgen.ProcessMode.InelasticElastic,
-    ''' or cepgen.ProcessMode.ElasticElastic
-           cepgen.ProcessMode.ElasticInelastic
-           cepgen.ProcessMode.InelasticInelastic '''
+    processParameters = cepgen.Parameters(
+        mode = cepgen.ProcessMode.InelasticElastic,
+        ''' or cepgen.ProcessMode.ElasticElastic
+               cepgen.ProcessMode.ElasticInelastic
+               cepgen.ProcessMode.InelasticInelastic '''
+        pair = 13,
+    ),
     inKinematics = cepgen.Parameters(
         pz = (6500., 6500.), # or cmEnergy = 13.e3,
         structureFunctions = cepgen.StructureFunctions.SuriYennie,
     ),
     outKinematics = cepgen.Parameters(
-        pair = 13,
         pt = (25., ),
         energy = (0., ),
         eta = (-2.5, 2.5),
@@ -95,7 +91,7 @@ The second (and simplest one), inherited from `LPAIR` and `PPtoLL`, only allows 
 The table below lists all keys currently handled by this parser, along with their default value (if not retrieved from the steering card).
 
 |        | Description                                                     | Default    | Unit |
-|:------:|:----------------------------------------------------------------|-----------:|:----:|
+|:------:|:----------------------------------------------------------------|:-----------|:----:|
 | `PROC` | Process to generate                                             | `lpair`    |      |
 | `MODE` | Subprocess' mode                                                | 1 (el-el)  |      |
 |        | **Incoming state**                                              |            |      |
@@ -110,7 +106,7 @@ The table below lists all keys currently handled by this parser, along with thei
 | `NCSG` | Number of points to probe in Vegas                              | 100        |      |
 | `ITVG` | Number of Vegas iterations                                      | 10         |      |
 | `NGEN` | Number of unweighted events to generate                         | 0          |      |
-|        | **Central system**                                              |            |      |
+|| **Central system**                                                      |            |      |
 | `PAIR` | Outgoing leptons' PDG identifier                                | 13 (muons) |      |
 | `PTCT` | Minimal transverse momentum (single central particle)           | 3.0        | GeV  |
 | `MSCT` | Minimal central system mass                                     | 0.0        | GeV  |
@@ -119,8 +115,8 @@ The table below lists all keys currently handled by this parser, along with thei
 | `ETMX` | Maximal pseudo-rapidity (central outgoing particles)            | 2.5        |      |
 | `YMIN` | Minimal rapidity (central outgoing particles)                   | -5.0       |      |
 | `YMAX` | Maximal rapidity (central outgoing particles)                   | 5.0        |      |
-|        | **Outgoing protons / remnants**                                 |            |      |
-| `HADR` | Hadronisation algorithm                                         |            |      |
+|| **Outgoing protons / remnants**                                         |            |      |
+| `HADR` | Hadronisation algorithm                                         | `none`     |      |
 | `MXMN` | Minimal invariant mass of proton remnants ($m_p+m _ {\pi^{0}}$) | 1.07       | GeV  |
 | `MXMX` | Maximal invariant mass of proton remnants                       | 320        | GeV  |
 |        | **CepGen internal flags**                                       |            |      |
