@@ -36,7 +36,7 @@ This will copy all required headers into the local includes directory (e.g. `/us
 This last stage enables the library developer to link easily its library against all `CepGen` requirements:
 
 - `libCepGenCore` contains all physics constants, calculators, and helpers, along with "non-physics" standard objects implementation,
-- `libCepGenProcesses` contains [all processes definitions](proclist) and implementations,
+- `libCepGenProcesses` contains [all processes definitions](/processes) and implementations,
 - `libCepGenStructureFunctions` embeds all proton [structure functions](str-functions) calculators objects,
 - `libCepGenEvent` holds the definition of events and subleading particles objects (useful for analyses of CepGen outputs),
 - `libCepGenIO` provides a set of helper tools for the interfacing with external applications.

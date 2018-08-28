@@ -1,4 +1,4 @@
 ---
 name: Usage
-link-to: /steering-card.html
+link-to: /usage.html
 ---

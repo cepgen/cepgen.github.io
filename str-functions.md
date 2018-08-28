@@ -7,6 +7,10 @@
 This page presents the list of $F_2/F_L$ parameterisations implemented in `CepGen`.
 All of these may be used and linked against any external code.
 
+Structure functions designated with a :warning: sign are only defining $F_2$ and use the $R$ modelling-dependent relation:
+
+$$F_L(\xbj,Q^2) = \left(1+\frac{4m_p^2\xbj^2}{Q^2}\right)\frac{R}{1+R}F_2(\xbj,Q^2).$$
+
 
 | Name                                 | Code | Description           | $F_2$ | $F_L$ |
 |--------------------------------------|:----:|-----------------------|:-----:|:-----:|
@@ -20,10 +24,6 @@ All of these may be used and linked against any external code.
 | [`GD07p`](structure-functions/allm)  | 203  | GD07p (HERMES refit)  | :heavy_check_mark: | :warning: |
 | [`GD11p`](structure-functions/allm)  | 204  | GD11p (HERMES refit)  | :heavy_check_mark: | :warning: |
 | `PDF`
-
-Structure functions designated with a :warning: sign are only defining $F_2$ and use the $R$ modelling-dependent relation:
-
-$$F_L(\xbj,Q^2) = \left(1+\frac{4m_p^2\xbj^2}{Q^2}\right)\frac{R}{1+R}F_2(\xbj,Q^2).$$
 
 ## Suri-Yennie
 

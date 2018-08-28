@@ -1,4 +1,4 @@
 ---
 name: Processes
-link-to: /proclist.html
+link-to: /processes
 ---
