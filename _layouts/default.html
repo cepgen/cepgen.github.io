@@ -22,10 +22,12 @@
           Macros: {
             Pom: "{I\\!P}",
             Reg: "{I\\!R}",
+            ggx: "{\\gamma\\gamma\\rightarrow X}",
             ggll: "{\\gamma\\gamma\\rightarrow\\ell^+\\ell^-}",
             ggff: "{\\gamma\\gamma\\rightarrow f\\bar f}",
             ggww: "{\\gamma\\gamma\\rightarrow W^+W^-}",
             kt: "{k_{\\rm T}}",
+            vecqt: "{\\bf q_{\\rm T}}",
             xbj: "{x_{\\rm Bj}}",
           }
         },
@@ -69,7 +71,9 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} is released under the GNU GPL v3.0 license.
+        <br />
+        For this documentation page, copyright 2014-2018, the <a href="{{ site.github.owner_url }}">{{ site.title }}</a> collaboration.</p>
         {% endif %}
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>

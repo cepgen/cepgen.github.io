@@ -10,10 +10,10 @@ The full description of this $pp \rightarrow p^{(\ast)}(\ggll)p^{(\ast)}$ proces
 
 ## Process-specific options
 
-The `pair` integer value, only used in the lepton pair production, allows the end-user to specify the PDG identifier of the lepton to be produced in the final state.
+The `pair` integer value allows the end-user to specify the PDG identifier of the lepton to be produced in the final state.
 It can hence take the following values:
-- `11` for the electron/position pair production
-- `13` for the dimuon pair production
+- `11` for the electron/positron pair production
+- `13` for the muon pair production
 - `15` for the tau pair production
 
 The `mode` enumeration allows to specify the kinematic regime to generate and the size of the phase space to perform the integration.

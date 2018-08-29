@@ -45,8 +45,7 @@ $$\sigma(Q^2) = \sigma_0\left(1 + Q^2/\Lambda^2\right)^{-E _ {\rm prop}}$$
 
 $$\frac{\sigma_L(Q^2)}{\sigma_T(Q^2)}=\frac{\xi Q^2/m^2}{1+\xi\chi Q^2/m^2}.$$
 
-Therefore, in this scheme,
-
+>  Therefore, in this scheme,
 $$\sigma_L/\sigma_T\to \left\{\begin{array}{ll}
 \xi Q^2/m^2 & \text{for low-}Q^2,\\
 1/\chi      & \text{for high-}Q^2.

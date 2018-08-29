@@ -10,7 +10,7 @@ Active development branches:
 - `pA-to-ff`: for the version allowing FORTRAN implementations of $k _ \mathrm{T}$ processes, including the $pA\to X(g\gamma\to c\bar c)A$ or $pA\to p^{(\ast)}(\gamma\gamma\to\ell^+\ell^-)A$ processes.
 
 Current contributors: {% for contrib in site.github.contributors %}
-![{{ contrib.login }}]({{ contrib.avatar_url }} "{{ contrib.login }}"){:width="25px"}
+[![{{ contrib.login }}]({{ contrib.avatar_url }} "{{ contrib.login }}"){:width="25px"}](https://github.com/{{ contrib.login }})
 {% endfor %}
 
 ## General recipe
@@ -48,6 +48,6 @@ The test executable will then be located in the `test/` directory.
 You may run it using, for instance (in `cepgen-dev/build/`):
 
 ```sh
-test/cepgen <path to your steering card>
+./test/cepgen <path to your steering card>
 ```
 
