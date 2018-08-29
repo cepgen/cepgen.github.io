@@ -4,7 +4,7 @@ title: ALLM structure functions
 
 # ALLM nucleon structure functions
 
-A full reference of this parameterisation by _Abramowicz et al._ can be found in [the bibliography](bibliography#abramowicz-et-al).
+A full reference of this parameterisation by _Abramowicz et al._ can be found in [the bibliography](/bibliography#sf:allm).
 
 In this continuum region modelling the $F_2$ proton structure function is parameterised as:
 

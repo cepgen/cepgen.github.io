@@ -35,12 +35,12 @@ It provides a reasonable description of SLAC data in the resonance and continuum
 
 ## Szczurek-Uleshchenko
 
-This set puts an emphasis on the low-to-intermediate $Q^2$ region and includes a smooth continuation to low-$Q^2$.
+This set [described here](/bibliography#sf:su) puts an emphasis on the low-to-intermediate $Q^2$ region and includes a smooth continuation to low-$Q^2$.
 
 ## Resonance models
 ### Fiore-Brasse
 
-This parameterisation gives a very good description of photoabsorption in the resonance region from low to large $Q^2$.
+This parameterisation (described [here](/bibliography#sf:fiore) and [here](/bibliography#sf:brasse)) gives a very good description of photoabsorption in the resonance region from low to large $Q^2$.
 Furthermore, it is extremely well reproducing JLAB data.
 
 ![](/assets/img/str-fun/fiorebrasse_f2.png){:width="49%"}
@@ -48,7 +48,7 @@ Furthermore, it is extremely well reproducing JLAB data.
 
 ### Christy-Bosted
 
-The set developed by M.E. Christy and P.E. Bosted is emphasised on the very-low $Q^2$ regime, with its particular use of JLAB's Hall-C data on:
+The set [developed by M.E. Christy and P.E. Bosted](/bibliography#sf:cb) is emphasised on the very-low $Q^2$ regime, with its particular use of JLAB's Hall-C data on:
 - inclusive inelastic (up to $Q^2\simeq$ 7.5 GeV²),
 - photoproduction at $Q^2=0$, and
 - DIS data at high-$(Q^2,W)$.

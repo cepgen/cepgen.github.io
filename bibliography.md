@@ -21,14 +21,19 @@ M. Łuszczak, W. Schäfer and A. Szczurek, *Production of $W^+W^−$ pairs via $
 ## Structure functions
 A. Suri and D. R. Yennie, *The Space-Time Phenomenology of Photon Absorption and Inelastic Electron Scattering*. [Annals Phys. 72 (1972) 243](http://dx.doi.org/10.1016/0003-4916(72)90242-4).
 
+<a name="sf:fiore"/>
 R. Fiore, A. Flachi, L. L. Jenkovszky, A. I. Lengyel and V. K. Magas, *Explicit model realizing parton hadron duality*. [Eur. Phys. J. A15 (2002) 505–515](http://dx.doi.org/10.1140/epja/i2002-10047-3), [arXiv:hep-ph/0206027](https://arxiv.org/abs/hep-ph/0206027).
 
+<a name="sf:brasse"/>
+F.W. Brasse, E. Chazelas, W. Fehrenbach, K.H. Frank, E. Ganssauge, Joerg Gayler, V. Korbel, J. May, M. Merkwitz, V. Rittenberg, H.R. Rubinstein, *Analysis of photo and electroproduction data against $\omega_W$*. [Nucl.Phys. B39 (1972) 421-431](https://doi.org/10.1016/0550-3213(72)90380-X).
+
+<a name="sf:cb"/>
 M.E. Christy and P.B. Bosted, *Empirical Fit to Precision Inclusive Electron-Proton Cross Sections in the Resonance Region*. [Phys. Rev. C81 (2010) 055213](https://doi.org/10.1103/PhysRevC.81.055213), [arXiv:0712.3731 [hep-ph]](https://arxiv.org/abs/0712.3731).
 
+<a name="sf:su"/>
 A. Szczurek and V. Uleshchenko, *Nonpartonic components in the nucleon structure functions at small $Q^2$ in the broad range of $x$*. [Eur. Phys. J. C12 (2000) 663–671](http://dx.doi.org/10.1007/s100520000218), [arXiv:hep-ph/9904288](https://arxiv.org/abs/hep-ph/9904288).
 
-### Abramowicz _et al_
-
+<a name="sf:allm"/>
 H. Abramowicz, E.M. Levin, A. Levy and U. Maor, *A Parametrization of $\sigma_T(\gamma^\ast p)$ above the resonance region $Q^2\geq 0$*. [Phys. Lett. B269 (1991) 465-476](http://dx.doi.org/10.1016/0370-2693(91)90202-2)
 
 H. Abramowicz and A. Levy, *The ALLM parameterization of $\sigma_{\mathrm{tot}}(\gamma^\ast p)$: an update*. [arXiv:hep-ph/9712415](https://arxiv.org/abs/hep-ph/9712415).
