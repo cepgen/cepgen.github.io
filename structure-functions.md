@@ -19,10 +19,10 @@ $$F_L(\xbj,Q^2) = \left(1+\frac{4m_p^2\xbj^2}{Q^2}\right)\frac{R}{1+R}F_2(\xbj,Q
 | `BDH`                                          | 13   | Block-Durand-Ha       | :white_check_mark: | -     |
 | [`FioreBrasse`](#fiore-brasse)                 | 101  | Fiore & Brasse        | :white_check_mark: | -     |
 | [`ChristyBosted`](#christy-bosted)             | 102  | Christy & Bosted      | :white_check_mark: | :white_check_mark: |
-| [`ALLM91`](structure-functions/allm)           | 201  | ALLM 1991             | :white_check_mark: | :pencil2: |
-| [`ALLM97`](structure-functions/allm)           | 202  | ALLM 1997             | :white_check_mark: | :pencil2: |
-| [`GD07p`](structure-functions/allm)            | 203  | GD07p (HERMES refit)  | :white_check_mark: | :pencil2: |
-| [`GD11p`](structure-functions/allm)            | 204  | GD11p (HERMES refit)  | :white_check_mark: | :pencil2: |
+| [`ALLM91`](/structure-functions/allm)           | 201  | ALLM 1991             | :white_check_mark: | :pencil2: |
+| [`ALLM97`](/structure-functions/allm)           | 202  | ALLM 1997             | :white_check_mark: | :pencil2: |
+| [`GD07p`](/structure-functions/allm)            | 203  | GD07p (HERMES refit)  | :white_check_mark: | :pencil2: |
+| [`GD11p`](/structure-functions/allm)            | 204  | GD11p (HERMES refit)  | :white_check_mark: | :pencil2: |
 | `PDF`
 
 ## Suri-Yennie
@@ -47,6 +47,11 @@ Furthermore, it is extremely well reproducing JLAB data.
 ![](/assets/img/str-fun/fiorebrasse_fl.png){:width="49%"}
 
 ### Christy-Bosted
+
+The set developed by M.E. Christy and P.E. Bosted is emphasised on the very-low $Q^2$ regime, with its particular use of JLAB's Hall-C data on:
+- inclusive inelastic (up to $Q^2\simeq$ 7.5 GeV²),
+- photoproduction at $Q^2=0$, and
+- DIS data at high-$(Q^2,W)$.
 
 ![](/assets/img/str-fun/christybosted_f2.png){:width="49%"}
 ![](/assets/img/str-fun/christybosted_fl.png){:width="49%"}

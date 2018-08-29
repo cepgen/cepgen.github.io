@@ -71,7 +71,7 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} is released under the GNU GPL v3.0 license.
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} is released under the <a href="{{ site.github.license.url }}">{{ site.github.license.name }}</a>.
         <br />
         For this documentation page, copyright 2014-2018, the <a href="{{ site.github.owner_url }}">{{ site.title }}</a> collaboration.</p>
         {% endif %}

@@ -10,19 +10,19 @@ Obviously, it requires the Python C API to be linked against the steering cards 
 
 Two core object types (both inheriting from Python's `dict` containers) are imported in the scripting scope through the general statement:
 
-```python
+~~~ python
 import Config.Core as cepgen
-```
+~~~
 
 These two types are **`Module`**, and **`Parameters`**.
 The earlier is a subset of the latter, with the first string-type attribute defining the module name.
 
 The common usage for such a module definition is, for instance:
 
-```python
+~~~ python
 import Config.Core as cepgen
 module = cepgen.Module('my_first_module', foo = 'bar')
-```
+~~~
 In [this section](#more-information-about-containers), one can see an illustrated example of this **`Module`**/**`Parameters`**/`dict` relation.
 
 Several blocks are required to be defined in a `CepGen` steering card.
@@ -43,7 +43,7 @@ Equivalently, a `pdgIds` pair/list of [integer-type PDG identifiers](http://pdg.
 A default `pdgIds = (2212,2212)` corresponding to the proton-proton initial state is used.
 
 The `structureFunctions` attribute specifies the $F _ {2/L}(\xbj,Q^2)$ structure function to use in the parameterisation of the incoming photon fluxes.
-The name of the structure functions set (see [the complete list here](/str-functions)) has to be prepended by `StructureFunctions`.
+The name of the structure functions set (see [the complete list here](/structure-functions)) has to be prepended by `StructureFunctions`.
 
 For instance, the _Suri-Yennie_ set may be selected through `StructureFunctions.SuriYennie`.
 
@@ -71,7 +71,7 @@ The generation of 100k single-dissociative $\gamma\gamma\to\mu^+\mu^-$ events at
 
 can be steered using the following card:
 
-```python
+~~~ python
 import Config.Core as cepgen
 from Config.integrators_cff import vegas as integrator
 from Config.generator_cff import generator as gentmpl
@@ -96,9 +96,11 @@ process = cepgen.Module('lpair',
 generator = gentmpl.clone(
     numEvents = 1e5,
 )
-```
+~~~
 
 This configuration is equivalent to the _LPAIR card_ shown [here](lpair#configuration-card-example).
+
+-----------------------------------------------------------
 
 ### More information about containers
 
@@ -106,27 +108,27 @@ The **`Module`** object is defined as a named **`Parameters`** container.
 Its naming is stored within its `mod_name` attribute.
 For instance, the example shown [in this section](#structured-python-configurations) may be rewritten as:
 
-```python
+~~~ python
 import Config.Core as cepgen
 module = cepgen.Parameters(mod_name = 'my_first_module', foo = 'bar')
-```
+~~~
 or, using standard Python containers:
-```python
+~~~ python
 module = {'mod_name': 'my_first_module', 'foo': 'bar'}
-```
+~~~
 
 Among the features introduced by these two objects, one may quote the capability of deep-cloning one while changing one or several attributes in one pass.
 For instance, using the former definition of `module`:
-```python
+~~~ python
 module_bis = module.clone(
     foo2 = 42,
     foo3 = cepgen.Parameters(
         nestedFoo = 'nestedBar',
     )
 )
-```
+~~~
 is equivalent to defining a `module_bis` container as:
-```python
+~~~ python
 module_bis = cepgen.Module('my_first_module',
     foo = 'bar',
     foo2 = 42,
@@ -134,5 +136,5 @@ module_bis = cepgen.Module('my_first_module',
         nestedFoo = 'nestedBar',
     ),
 )
-```
+~~~
 

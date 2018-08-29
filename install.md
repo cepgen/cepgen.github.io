@@ -4,37 +4,40 @@ title: Installation procedure
 
 # CepGen installation
 
-The recipe detailed below is intended for "regular users", who downloaded a version of the code from a current [stable release](https://github.com/cepgen/cepgen/releases).
+The recipe detailed below is intended for "regular users", who downloaded a version of the code from a current [stable release]({{ site.github.releases_url }}).
 ***For developers, please find a collection of useful procedures [in this page](install-dev).***
 
 Start by downloading the latest release on our github project page.
 Unpack the sources in a location referred here as: `$CEPGEN_SOURCES`.
 
-For instance, for `CepGen` v1.0:
+For instance, for `CepGen` v`x.y`:
 
-```sh
-tar xvfz cepgen-1.0.tar.gz
-cd cepgen-1.0
+~~~ sh
+tar xvfz cepgen-x.y.tar.gz
+cd cepgen-x.y
 export CEPGEN_SOURCES=`pwd -P`
-```
+~~~
 
-Once you have set up the sources and downloaded/installed the required dependencies, create your building environment (e.g. in `$CEPGEN_SOURCES/build`), and run
-```sh
+Once you have set up the sources and downloaded/installed the required dependencies, create your building environment (here, we will use the general `CMake` convention `$CEPGEN_SOURCES/build`).
+The compilation is hence done with:
+~~~ sh
 mkdir $CEPGEN_SOURCES/build && cd $CEPGEN_SOURCES/build
 cmake $CEPGEN_SOURCES # or `cmake ..`, path to the sources
 make # optionally, add -jN (N=number of parallel threads for compilation)
-```
-then, if you need to import the libraries and includes in your standard `PATH`, run (as root)
-```sh
+~~~
+
+-----------------------------------------------------------
+If you need to import the libraries and includes in your standard `PATH`, run (as root)
+~~~ sh
 make install
-```
+~~~
 
 This will copy all required headers into the local includes directory (e.g. `/usr/local/include/`), and copy the shared objects into the library path (e.g. `/usr/local/lib64/` or `/usr/local/lib/`).
 
 > This last stage enables the library developer to link easily its library against all `CepGen` requirements:
   - `libCepGenCore` contains all physics constants, calculators, and helpers, along with "non-physics" standard objects implementation,
   - `libCepGenProcesses` contains [all processes definitions](/processes) and implementations,
-  - `libCepGenStructureFunctions` embeds all proton [structure functions](str-functions) calculators objects,
+  - `libCepGenStructureFunctions` embeds all proton [structure functions](/structure-functions) calculators objects,
   - `libCepGenEvent` holds the definition of events and subleading particles objects (useful for analyses of CepGen outputs),
   - `libCepGenIO` provides a set of helper tools for the interfacing with external applications.
 

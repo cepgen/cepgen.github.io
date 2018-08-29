@@ -9,33 +9,35 @@ Active development branches:
 - `devel`: for the main branch where most of the new code is being pushed. The Pythia 8 hadronisation part handles by default the collinear emission of a valence quark from which the two-photon system arises ;
 - `pA-to-ff`: for the version allowing FORTRAN implementations of $k _ \mathrm{T}$ processes, including the $pA\to X(g\gamma\to c\bar c)A$ or $pA\to p^{(\ast)}(\gamma\gamma\to\ell^+\ell^-)A$ processes.
 
+{{ site.github }}
+
 Current contributors: {% for contrib in site.github.contributors %}
-[![{{ contrib.login }}]({{ contrib.avatar_url }} "{{ contrib.login }}"){:width="25px"}](https://github.com/{{ contrib.login }})
+[![{{ contrib.login }}]({{ contrib.avatar_url }} "{{ contrib.login }}"){:width="25px"}]({{ contrib.html_url }})
 {% endfor %}
 
 ## General recipe
 
 To obtain a list of mandatory and optional dependencies, have a look at the [general installation procedure](install).
 
-```sh
+~~~ sh
 git clone git@github.com:forthommel/cepgen-dev
 cd cepgen-dev
 mkdir build
 cd build
-```
+~~~
 
 Then check a development branch out (see the list above for a detailed description of major branch features):
 
-```sh
+~~~ sh
 git checkout <branch name>
-```
+~~~
 
 Then the building procedure can be launched:
 
-```sh
+~~~ sh
 cmake ..
 make
-```
+~~~
 
 Currently, several test executables can be linked against the `CepGen` libraries, for instance:
 
@@ -47,7 +49,7 @@ You may build these executables using the `make` command. For instance, `make ce
 The test executable will then be located in the `test/` directory.
 You may run it using, for instance (in `cepgen-dev/build/`):
 
-```sh
+~~~ sh
 ./test/cepgen <path to your steering card>
-```
+~~~
 

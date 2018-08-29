@@ -45,7 +45,7 @@ The generation of 100k single-dissociative $\gamma\gamma\to\mu^+\mu^-$ events at
 
 can be steered using the following card:
 
-```fortran
+~~~ fortran
 PROC lpair
 MODE 3      ! inelastic-elastic
 PAIR 13     ! muons
@@ -59,6 +59,6 @@ ECUT 0.
 MXMN 1.07
 MXMX 1000.
 NGEN 100000 ! generate 100k events
-```
+~~~
 
 This configuration is equivalent to the _Python card_ shown [here](python#configuration-card-example).
