@@ -4,7 +4,7 @@ title: kT factorisation
 
 # The $\kt$ factorisation approach
 
-As described in [the reference papers](../bibliography#textbfk-_-mathrmtextbft-factorisation), the $\kt$-factorisation approach allows a direct factorisation of any hard process (e.g. photon- or gluon-induced productions) while accounting for transverse components of parton virtualities.
+As described in [the reference papers](../bibliography#kt-factorisation), the $\kt$-factorisation approach allows a direct factorisation of any hard process (e.g. photon- or gluon-induced productions) while accounting for transverse components of parton virtualities.
 
 For instance, a $pp\to p^{(\ast)}(\ggx)p^{(\ast)}$ matrix element can be factorised through the following formalism:
 

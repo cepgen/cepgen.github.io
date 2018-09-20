@@ -4,7 +4,7 @@ tags: diffvm
 category: processes
 ---
 
-# DiffVM
+# Diffractive vector meson production
 
 The $ep$-induced $\gamma^{(\ast)}\Pom\rightarrow VM$ process may be steered with the `diffvm` label.
 
@@ -39,15 +39,12 @@ Furthermore, the following parameters can be steered in this process:
 
 - `lambda` and `eprop` control the $Q^2$-dependence of the total production cross section, through
 
-$$\sigma(Q^2) = \sigma_0\left(1 + Q^2/\Lambda^2\right)^{-E _ {\rm prop}}$$
+$$\sigma(Q^2) = \sigma_0\left(1 + Q^2/\Lambda^2\right)^{-\epsilon _ {\rm prop}}$$
 
 - `xi` and `chi` control the behaviour of the longitudinal-to-transverse cross section ratio through
 
 $$\frac{\sigma_L(Q^2)}{\sigma_T(Q^2)}=\frac{\xi Q^2/m^2}{1+\xi\chi Q^2/m^2}.$$
 
->  Therefore, in this scheme,
-$$\sigma_L/\sigma_T\to \left\{\begin{array}{ll}
-\xi Q^2/m^2 & \text{for low-}Q^2,\\
-1/\chi      & \text{for high-}Q^2.
-\end{array}\right.$$
+Note
+: In this scheme, $\sigma_L/\sigma_T\to\xi Q^2/m^2$ for low-$Q^2$, and $1/\chi$ for high-$Q^2$.
 
