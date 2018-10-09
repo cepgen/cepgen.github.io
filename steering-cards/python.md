@@ -73,7 +73,7 @@ can be steered using the following card:
 
 ~~~ python
 import Config.Core as cepgen
-from Config.integrators_cff import vegas as integrator
+from Config.Integration.vegas_cff import integrator
 from Config.generator_cff import generator as gentmpl
 
 process = cepgen.Module('lpair',

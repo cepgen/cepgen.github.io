@@ -6,15 +6,15 @@ category: processes
 
 # $\kt$-factorised $\ggff$ process
 
-The photon transverse momentum-dependant description of this process as previously developed in [PPtoLL](../bibliography#textbfk-_-mathrmtextbft-factorisation), is provided through the `pptoll` process in CepGen.
+The photon transverse momentum-dependant description of this process as previously developed in [PPtoLL](/bibliography#textbfk-_-mathrmtextbft-factorisation), is provided through the `pptoll` process in CepGen.
 You may find a full description of this approach in [this page](kt-factor)
 
 ## Process-specific options
 
 The `pair` integer value allows the end-user to specify the PDG identifier of the fermion pair to be produced in the final state.
 It can hence take the following values:
-- `1-6` for the quark pair production,
-- `11`/`13`/`15` for the electron-positron/muon/tau pair production.
+- `1-6` (or `PDG.down`, `PDG.up`, `PDG.strange`, `PDG.charm`, `PDG.bottom`, `PDG.top` in [Python configuration scripts](/steering-cards/python)) for the quark pair production,
+- `11`/`13`/`15` (or `PDG.electron`/`PDG.muon`/`PDG.tau`) for the lepton pair production.
 
 The `mode` enumeration allows to specify the kinematic regime to generate and the size of the phase space to perform the integration.
 It can take the following values:
