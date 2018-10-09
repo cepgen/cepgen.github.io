@@ -4,39 +4,69 @@ title: LPAIR-like steering cards
 
 # LPAIR-like steering cards
 
-The second (and simplest one), inherited from `LPAIR` and `PPtoLL`, only allows to set a well-defined set of parameters through a *key → value* approach.
-The table below lists all keys currently handled by this parser, along with their default value (if not retrieved from the steering card).
+The second (and simplest one), inherited from `LPAIR` and `PPtoLL`, only allows to set a well-defined set of parameters through a *key → value* scheme.
+All keys currently handled by this parser are listed below, along with their default value (if not retrieved from the steering card).
 
-|        | Description                                                     | Default    | Unit |
-|:------:|:----------------------------------------------------------------|:-----------|:----:|
-| `PROC` | Process to generate                                             | `lpair`    |      |
-| `MODE` | Subprocess' mode                                                | 1 (el-el)  |      |
-|        | **Incoming state**                                              |            |      |
-| `IN1P`<br/>`INPP` | First incoming particle's momentum                   | 6500       | GeV  |
-| `IN2P`<br/>`INPE` | Second incoming particle's momentum                  | 6500       | GeV  |
-| `PMOD` | First incoming particle's remnant mode (or [structure functions modelling](/structure-functions)) | 2 (elastic)|      |
-| `EMOD` | Second incoming particle's remnant mode (or [structure functions modelling](/structure-functions)) | 2 (elastic)|      |
-| `Q2MN`<br/>`Q2MX` | Q² range (exchanged parton)                          | 0.0<br/>10⁵| GeV² |
-|        | **Integration parameters**                                      |            |      |
-| `NCVG` | Number of function calls in Vegas                               | 10⁵        |      |
-| `NCSG` | Number of points to probe in Vegas                              | 100        |      |
-| `ITVG` | Number of Vegas iterations                                      | 10         |      |
-| `NGEN` | Number of unweighted events to generate                         | 0          |      |
-|| **Central system**                                                      |            |      |
-| `PAIR` | Outgoing leptons' PDG identifier                                | 13 (muons) |      |
-| `PTCT` | Minimal transverse momentum (single central particle)           | 3.0        | GeV  |
-| `MSCT` | Minimal central system mass                                     | 0.0        | GeV  |
-| `ECUT` | Minimal energy (single central particle)                        | 0.0        | GeV  |
-| `ETMN`<br/>`ETMX` | Pseudo-rapidity range (central outgoing particles)   | -2.5<br/>2.5 |      |
-| `YMIN`<br/>`YMAX` | Rapidity range (central outgoing particles)          | -5.0<br/>5.0 |      |
-|| **Outgoing protons / remnants**                                         |            |      |
-| `HADR` | Hadronisation algorithm                                         | `none`     |      |
-| `MXMN`<br/>`MXMX` | Invariant mass range of proton remnants              | 1.07 ($m_p+m _ {\pi^{0}}$)<br/>320  | GeV  |
-|        | **CepGen run**                                                  |            |      |
-| `NGEN` | Number of events to generate                                    | 0          |      |
-| `DEBG` | Debugging verbosity                                             | 2 (warning)|      |
+### General parameters
 
-## Configuration card example
+* `PROC` (default: `lpair`)
+: Process to generate
+* `MODE` (default: `1` = elastic-elastic)
+: Subprocess' mode
+* `NGEN` (default: `0`)
+: Number of unweighted events to generate
+* `NTRT` (default: `1`)
+: Flag to specify if the integrant is required to be smoothed
+* `DEBG` (default: `2` = warning)
+: Debugging verbosity
+
+#### Vegas integration parameters
+
+* `NCVG` (default: `1D5`)
+: Number of function calls
+* `NCSG` (default: `100`)
+: Number of points to probe
+* `ITVG` (default: `10`)
+: Number of iterations for the integration
+
+### Kinematics parameters
+
+#### Incoming state
+
+* `IN1P`|`INPP` (default: `6500.0`)
+: First incoming particle's momentum, in GeV
+* `IN2P`|`INPE` (default: `6500.0`)
+: Second incoming particle's momentum, in GeV
+* `PMOD` (default: `2` = elastic)
+: First incoming particle's remnant mode or [structure functions modelling](/structure-functions)
+* `EMOD` (default: `2` = elastic)
+: Second incoming particle's remnant mode or [structure functions modelling](/structure-functions)
+* `Q2MN`&`Q2MX` (default: `0.0` → `1D5`)
+: Q² range for the exchanged parton, in GeV²
+
+#### Central system
+
+* `PAIR` (default: `13` = µ)
+: Outgoing leptons' PDG identifier
+* `PTCT` (default: `3.0`)
+: Minimal transverse momentum for any single central particle, in GeV/c
+* `MSCT` (default: `0.0`)
+: Minimal central system mass, in GeV/c²
+* `ECUT` (default: `0.0`)
+: Minimal energy for any single central particle, in GeV
+* `ETMN`&`ETMX` (default: `-2.5` → `2.5`)
+: Pseudo-rapidity range for central outgoing particles
+* `YMIN`&`YMAX` (default: `-5.0` → `5.0`)
+: Rapidity range for central outgoing particles
+
+#### Outgoing protons / remnants
+
+* `HADR` (default: `none`)
+: Hadronisation algorithm
+* `MXMN` & `MXMX` (default: `1.07` $=m_p+m _ {\pi^{0}}$ → `320.0`)
+: Invariant mass range of proton remnants, in GeV/c²
+
+### Configuration card example
 
 The generation of 100k single-dissociative $\gamma\gamma\to\mu^+\mu^-$ events at 13 TeV with the [LPAIR matrix element](/processes/lpair) implementation with the following phase space cuts:
 
