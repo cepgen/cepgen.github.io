@@ -4,16 +4,21 @@ title: Developers installation
 
 # Installation for developers
 
-Active development branches:
+### Active development branches
 
-- `devel`: for the main branch where most of the new code is being pushed. The Pythia 8 hadronisation part handles by default the collinear emission of a valence quark from which the two-photon system arises ;
-- `pA-to-ff`: for the version allowing FORTRAN implementations of $k _ \mathrm{T}$ processes, including the $pA\to X(g\gamma\to c\bar c)A$ or $pA\to p^{(\ast)}(\gamma\gamma\to\ell^+\ell^-)A$ processes.
+- `devel`
+: Main branch where most of the new code is being pushed. The Pythia 8 hadronisation part handles by default the collinear emission of a valence quark from which the two-photon system arises.
+- `diffvm`
+: Version including the [DiffVM](/processes/diffvm) diffractive vector meson production process.
+- `herwig-fragmentation`
+: Implementation of the Herwig (aka Herwig 7) cluster fragmentation algorithm.
 
-{{ site.github }}
+### Miscellaneous information
 
-Current contributors: {% for contrib in site.github.contributors %}
+* Current contributors: {% for contrib in site.github.contributors %}
 [![{{ contrib.login }}]({{ contrib.avatar_url }} "{{ contrib.login }}"){:width="25px"}]({{ contrib.html_url }})
 {% endfor %}
+* Open issues: {{ site.github.public_repositories[0].open_issues }}
 
 ## General recipe
 
@@ -43,7 +48,7 @@ Currently, several test executables can be linked against the `CepGen` libraries
 
 - `cepgen`
 - `cepgen-root`
-- `cepgen-lhe`
+- `cepgen-ascii`
 
 You may build these executables using the `make` command. For instance, `make cepgen`.
 The test executable will then be located in the `test/` directory.

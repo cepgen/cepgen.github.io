@@ -6,7 +6,8 @@ category: processes
 
 # Diffractive vector meson production
 
-The $ep$-induced $\gamma^{(\ast)}\Pom\rightarrow VM$ process may be steered with the `diffvm` label.
+The $ep$-induced $\gamma^{(\ast)}\Pom\rightarrow$ vector meson production process may be selected from the `diffvm` label.
+It was designed for HERA physics cases, hence the asymmetric electron-proton initial beam kinematics.
 
 ## Process-specific options
 
@@ -31,7 +32,7 @@ Furthermore, the following parameters can be steered in this process:
 
 ### `pomeronParameters`
 
-- `epsilonW` and `epsilonM` controlling the intercept of the pomeron trajectory (minus 1).
+- `epsilonW` and `epsilonM` are controlling the intercept of the pomeron trajectory (minus 1).
   The first one steers the rise of $\sigma _ {\gamma p}$ with $W$, while the second controls the $M_X$ spectrum
 - `alpha1` and `alpha1m` control the pomerons trajectory's $\alpha'$ (therefore, expressed in GeV¯²)
 

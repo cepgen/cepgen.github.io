@@ -26,7 +26,7 @@ We expect your subroutine to follow the C-equivalent signature:
 void dummy_f77_process_( double& aintegrand );
 ~~~
 
-This might get translated, for instance, into the following minimal working example (with the _free form_ coding convention):
+This might get translated, for instance, into the following minimal working example (here using the _free form_ Fortran coding convention):
 
 ~~~ fortran
 subroutine dummy_f77_process(aintegrand)
@@ -52,6 +52,9 @@ The kinematic blocks defined through this initial **`include`** statement are de
 ### Kinematics block
 
 #### Physics constants
+
+This block introduces all useful and standard physical constants in double precision to help the process definition: $m_p$, GeV²/barn, $\pi$, $\alpha_{\rm em}$.
+
 ~~~ fortran
       common/constants/am_p,units,pi,alpha_em
       double precision am_p,units,pi,alpha_em
