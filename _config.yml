@@ -1,8 +1,5 @@
 title: CepGen
-theme: jekyll-theme-minimal
-#theme: jekyll-theme-leap-day
 description: A central exclusive events generator for high-energy physics
-plugins:
-  - jemoji
-repository: cepgen/cepgen
+gems:
+    - jekyll-redirect-from
 
